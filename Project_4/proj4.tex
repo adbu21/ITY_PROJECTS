@@ -1,0 +1,57 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[text={17cm,24cm},left=2cm,top=3cm]{geometry}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[unicode]{hyperref}
+
+\begin{document}
+
+\begin{center}
+\thispagestyle{empty}
+  \Huge{\textsc{Vysoké učení technické v~Brně}} \\
+  \huge{\textsc{Fakulta informačních technologií}}
+        \vspace{\stretch{0.382}}
+
+  \LARGE{Typografie a publikování - 4.projekt}  \\
+  \Huge{Citace v~prostředí \LaTeX }
+        \vspace{\stretch{0.618}}
+
+\end{center}
+
+  \Large{\today \hfill Adam Buchta (xbucht29)}
+  \newpage
+  \setcounter{page}{1}
+  {\fontsize{11pt}{13pt}\selectfont
+  \section{\LaTeX}
+  \subsection{Co je to \LaTeX ?}
+  \LaTeX ~je nadstavba systému \TeX. Je to soubor maker a příkazů pro usnadnění tvorby textového dokumentu. Tyto příkazy jsou vytvořeny kombinací základních příkazů systému \TeX . Samotný \TeX ~obsahuje jen kolem 300 základních příkazů. Pro další příkazy musíme připojit takzvané package. Soubory s~mnohými dalšími příkazy. \cite{ryb,boj}
+
+  \subsection{Jak \LaTeX ~funguje?}
+
+  \LaTeX ~čte text jako seznam tokenů. Musíme si zapamatovat, že \LaTeX ~má vymezené některé znaky pro vlastní speciální účely. Zobrazit tyto znaky v~textu je možné použitím příkazů pro sazbu těchto znaků. Viz: \cite{knu}
+
+  Sázení textu v~systému \LaTeX ~funguje na základě různýc příkazů a textových prostředí. Psaní \LaTeX ového dokumentu tak může připomínat programování. Není se však čeho obávat. Naučit se ho na základní úrovni zabere minimum času a další funkce již nejsou o~tolik složitější. \cite{fou}
+
+  Existuje mnoho článků a návodů jak začít používat \LaTeX. Viz: \cite{rob}
+
+  \subsection{Proč používat \LaTeX ?}
+
+  Narozdíl od jiných textových editorů (zejména editorů typu WYSIWYG) vás systém \LaTeX ~neomezuje. Systém \LaTeX ~vyniká skvělou přesností a velkými možnostmi sázení textu. O~tom nás může přesvědčit už jen vysázení samého názvu \LaTeX , který bychom v~jakémkoliv jiném textovém editoru vytvářeli velmi těžko. \cite{mar}
+
+  To neznamená, že je vhodné používat \LaTeX ~pro všechny možné typy dokumentů. \LaTeX ~je vhodnější pro rozsáhlé texty nebo texty s~matematickými texty. Na krátké dokumenty bohatě postačí obyčejný textový editor. \cite{ves}
+
+  \subsection{Sazba obrázků}
+
+  Systém \LaTeX ~není primárně určen pro vkládání obrázků. Se sazbou obrázků nám pomáhá prostředí \verb|graphicx|, které nám umožňuje vkládat a upravovat rastrové i vektorové obrázky. \cite{sat,sva}
+
+  Mimo vkládání obrázků nám \LaTeX ~umožňuje i vytvářet vlastní jednoduché obrázky. K~tomu slouží například prostředí \verb|picture|. Dnes existuje ovšem ještě lepší prostředí pro tvorbu jednoduchých obrazců a to prostředí \verb|tikz|. \cite{wri}
+
+  \newpage
+  \bibliographystyle{czechiso}
+  \renewcommand{\refname}{Použité zdroje}
+  \bibliography{proj4}
+
+}
+\end{document} 

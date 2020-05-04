@@ -1,0 +1,132 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[text={18cm,25cm},left=1.5cm,top=2.5cm]{geometry}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage{mathptmx} % times font in math
+\usepackage{newtxtext} % times font, as a part of mathptmx
+\usepackage{amsthm} % math symbols, etc.
+\usepackage{amsmath} % align, equation
+\usepackage{amsfonts} % used for big ([{}])
+\theoremstyle{definition}
+\newtheorem{definition}{Definice}
+\theoremstyle{plain}
+\newtheorem{plain}{Věta}
+\begin{document}
+\begin{center}
+\thispagestyle{empty}
+  \Huge{\textsc{Fakulta informačních technologií \\
+  Vysoké učení technické v Brně}}
+        \vspace{\stretch{0.382}}
+
+  \LARGE{Typografie a publikování - 2.projekt  \\
+  Sazba dokumentů a matematických výrazů}
+        \vspace{\stretch{0.618}}
+
+\end{center}
+
+  \Large{ 2019 \hfill Adam Buchta (xbucht29)}
+  \newpage
+  \twocolumn
+  {\fontsize{11pt}{14pt}\selectfont
+  \setcounter{page}{1}
+  \section*{Úvod}
+
+   V této úloze si vyzkoušíme sazbu titulní strany, matematických vzorců, prostředí a dalších textových struktur obvyklých pro technicky zaměřené texty (například rovnice (\ref{vzorec:1})
+   nebo Definice \ref{definice:1} na straně \pageref{definice:1}). Pro odkazovaní na vzorce
+   a struktury zásadně používáme příkaz \verb"\label" a \verb"\ref"
+   případně \verb"\pageref" pokud se chceme odkázat na stranu výskytu.
+
+   Na titulní straně je využito sázení nadpisu podle optického středu s využitím zlatého řezu. Tento postup byl
+   probírán na přednášce. Dále je použito odřádkování se
+   zadanou relativní velikostí 0.4 em a 0.3 em.
+
+
+  \section{Matematický text}
+
+   Nejprve se podíváme na sázení matematických symbolů
+   a výrazů v plynulém textu včetně sazby definic a vět s využitím balíku \verb"amsthm". Rovněž použijeme poznámku pod čarou s použitím příkazu \verb"\footnote". Někdy je vhodné použít konstrukci \verb"\{mbox}", která říká, že text nemá být zalomen.
+   \begin{definition}{}\label{definice:1}
+   Zásobníkový automat
+   \emph{(ZA) je definován jako sedmice tvaru
+   A = (Q, $\Sigma$ , $\Gamma$ , $\delta$ , $q_{0}$, $Z_{0}$, F), kde:}
+   \end{definition}
+
+   \begin{itemize}
+     \item \emph{Q je konečná množina} vnitřních (řídících) stavů,
+     \item $\Sigma$ \emph{je konečná} vstupní abeceda,
+     \item $\Gamma$ \emph{je konečná} zásobníková abeceda,
+     \item $\delta$ \emph{je} přechodová funkce $Q \times ( \Sigma \cup \{\epsilon\})\times \Gamma \rightarrow 2^{Q\times \Gamma^{*}}$
+     \item \emph{$q_{0} \in$ Q je} počáteční stav, \emph{$Z_{0} \in \Gamma$ je} startovací symbol zásobníku \emph{a $F \subseteq Q$ je množina} koncových stavů.
+   \end{itemize}
+
+   Nechť \emph{P = (Q, $\Sigma$ , $\Gamma$ , $\delta$ , $q_{0}$, $Z_{0}$, F)}
+   je zásobníkový automat. \emph{Konfigurací} nazveme trojici
+   (\emph{q, $\omega$, $\alpha$)$\in Q\times \Sigma^{*} \times \Gamma^{*}$, }
+   kde $q$ je aktuální stav vnitřního řízení, $\omega$ je dosud nezpracovaná část vstupního řetězce a
+   \emph{$\alpha = Z_{i_{1}}Z_{i_{2}}\dots Z_{i_{k}}$} je obsah zásobníku\footnote{\emph{$Z_{i_{1}}$} je vrchol zásobníku}.
+   
+  \subsection{Podsekce obsahující větu a odkaz}
+  \begin{definition}{}\label{definice:2}
+  Řetězec $\omega$ nad abecedou $\Sigma$ je přijat ZA \emph{A jestliže ($q_{0}$, $\omega$, $Z_{0}$) $\mathop{\vdash}\limits_{A}^{*}$ ($q_{F}$, $\epsilon$, $\gamma$) pro nějaké $\gamma \in \Gamma^{*}$ a $q_{F} \in$ F. Množinu L(A) = \{$\omega$ \textbar $\omega$ je přijat ZA A\} $\subseteq \Sigma^{*}$ nazýváme} jazyk přijímaný TS $M$.
+  \end{definition}
+  
+  Nyní si vyzkoušíme sazbu vět a důkazů opět s použitím balíku \verb"amsthm".
+  
+  \begin{plain}{}
+  Třída jazyků, které jsou přijímány ZA, odpovídá \textup{bezkontextovým jazykům.}
+  \end{plain}
+  
+  \begin{proof}
+  V důkaze vyjdeme z Definice \ref{definice:1} a \ref{definice:2}.
+  \end{proof}
+
+  \section{Rovnice a odkazy}
+
+    Složitější matematické formulace sázíme mimo plynulý
+    text. Lze umístit několik výrazů na jeden řádek, ale pak je
+    třeba tyto vhodně oddělit, například příkazem \verb"\quad".\bigskip
+
+  $\sqrt[i]{x^3_i}$\quad kde $x_{i}$ je $i$-té sudé číslo splňující \quad $x_{i}^{2-x_{i}^{i^{2}}}\leq x_{i}^{y_{i}^{3}}$\medskip
+
+  V rovnici (\ref{vzorec:1}) jsou využity tři typy závorek s různou explicitně definovanou velikostí.
+
+  \begin{align}\label{vzorec:1}
+    &x=\bigg[\Big\{ \big[ a+b\big] *c\Big\}^{d}\ominus 1\bigg]^{1/2}\\
+    &y=\lim_{n \rightarrow \infty}\frac{\frac{1}{\log_{10}x}}{\sin^{2}x+\cos^{2}x}\nonumber
+  \end{align}
+
+  V této větě vidíme, jak vypadá implicitní vysázení limity lim$_{n \rightarrow \infty} f(n)$ v normálním odstavci textu. Podobně je to i s dalšími symboly jako $\prod_{i=1}^{n}2^{i}$ či $\cap_{A\in\beta}A$. V případě vzorců $\lim\limits_{n \rightarrow \infty}f(n)$ a $\prod\limits_{i=1}^{n}2^i$ jsme si vynutili méně úspornou sazbu příkazem \verb"\limits".
+
+  \begin{equation}
+    \int_{b}^{a}g(x)dx=-\int\limits_{a}^{b}f(x)dx
+  \end{equation}
+  
+  \begin{equation}
+    \overline{\overline{A\wedge B}}\;\Leftrightarrow\;\overline{\overline{A}\vee\overline{B}}
+  \end{equation}
+  
+  \section{Matice}
+  
+    Pro sázení matic se velmi často používá prostředí \verb"array" a závorky (\verb"\left", \verb"\right").
+    
+  \begin{equation}
+    \Bigg[\begin{array}{lcr}&\widehat{\beta+\gamma}&\hat{\pi}\\\mathop{a}\limits^{\rightarrow}&\mathop{AC}\limits^{\longleftrightarrow}&\end{array}\Bigg]=1\Longleftrightarrow \mathbb{Q}=\textbf{R}\nonumber
+  \end{equation}
+  
+  \begin{equation}
+    \textbf{A}=\begin{array}{|cccc|}\mathop{a}_{11}&\mathop{a}_{12}&\dots&\mathop{a}_{1n}\\
+    \mathop{a}_{21}&\mathop{a}_{22}&\dots&\mathop{a}_{2n}\\
+    \vdots&\vdots&\ddots&\vdots\\
+    \mathop{a}_{m1}&\mathop{a}_{m2}&\dots&\mathop{a}_{mn}\end{array}
+    =\begin{array}{cc}t&u\\v\;&\;w\end{array}=tw-uv\nonumber
+  \end{equation}
+
+  Prostředí \verb"array" lze úspěšně využít i jinde.
+
+  \begin{equation}
+    \binom{n}{k}=\Bigg\{\begin{array}{ll}0&pro\;\emph{k}<0\;nebo\; \emph{k}>\emph{n}\\
+    \frac{n!}{k!(n-k)!}&pro\;0\leq \emph{k} \leq \emph{n}\end{array}\nonumber
+  \end{equation}
+}
+\end{document} 

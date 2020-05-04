@@ -1,0 +1,129 @@
+\documentclass[11pt, hyperref={unicode}]{beamer}
+\usetheme{Boadilla}
+\usecolortheme{default}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{graphicx} % beamer loads graphicx by itself (+ enumerate,..)
+\usepackage{xcolor}
+\usepackage[linesnumbered, ruled, longend]{algorithm2e}
+
+\title{Řadící algoritmy - Bubble sort}
+\subtitle{Typografie a publikování - 5. projekt}
+\author{Adam Buchta (xbucht29)}
+\date{\today}
+
+\begin{document}
+
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+    \begin{frame}
+        \tableofcontents
+    \end{frame}
+
+    \begin{frame}
+        \centering
+        {\color{blue!65!black!90!white}\Huge{Základní definice}}
+    \end{frame}
+
+    \section{Základní definice}
+    \begin{frame}
+        \frametitle{Základní definice}
+        \begin{itemize}
+          \item Bubble sort (či bublinkové řazení) je jednoduchý řadící algoritmus se \alert{složitostí} $O(n^2)$.
+          \item Složitost udává rychlost algoritmu vzhledem k množině vstupních dat.
+          \item Bubble sort je nejpomalejším řadícím algoritmem.
+        \end{itemize}
+    \end{frame}
+
+    \section{Princip}
+    \begin{frame}
+          \begin{figure}
+            \centering
+            {\color{blue!65!black!90!white}\huge{Princip}}
+                                \\~\
+                                \\~\
+
+            \includegraphics[width=230px]{BubbleSort.jpg}
+          \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Princip}
+        \begin{itemize}
+          \item Bublinky s menší hodnotou jsou lehčí a stoupají proto ve vodě rychleji.
+          \item Bubble sort porovnává každý prvek se svým následníkem. Je-li tento prvek větší/menší, zamění je.
+          \item Toto provede pro celou posloupnost \alert{$n$} prvků
+          \item Celý postup musíme aplikovat \alert{$n-1$} krát pro jistotu seřazení prvků.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \centering
+        {\color{blue!65!black!90!white}\Huge{Pseudokód}}
+    \end{frame}
+
+    \section{Pseudokód}
+
+    \begin{frame}
+        \frametitle{Pseudokód}
+        \textbf{Popis algoritmu v krocích}
+        \pause
+        \begin{enumerate}
+          \item Posloupnost rozdělíme na setříděnou a nesetříděnou část. {\color{blue!75!white!40!gray}(setříděná část je prázdná)}
+              \pause
+          \item Postupně porovnáme všechny sousední prvky v nesetříděné části a prohodíme je, pokud nejsou v požadovaném pořadí.
+              \pause
+          \item Krok 2 opakujeme, dokud nesetříděná část obsahuje více než jeden prvek.
+        \end{enumerate}
+    \end{frame}
+
+    \begin{frame}
+
+        \begin{algorithm}[H]
+            \For{$i$ in 1 $->$ a.length - 1}{
+                \For{$j$ in 1 $->$ a.length - $i$ - 1}{
+                    \If{$a[j] < a[j+1]$}{
+                        switch($a[j], a[j+1]$)}}}
+
+            \caption{Pseudocode}
+        \end{algorithm}
+    \end{frame}
+
+    \begin{frame}
+        \centering
+        {\color{blue!65!black!90!white}\Huge{Bubble sort s výhodou}}
+    \end{frame}
+
+    \section{Bubble sort s výhodou}
+
+    \begin{frame}
+        \frametitle{Bubble sort s výhodou}
+        \begin{itemize}
+          \item Navíc zavedena \alert{proměnná} sledující výměnu prvků.
+          \item Při alespoň jedné výměně se v celém poli opakuje porovnávání ještě jednou.
+          \item Tato metoda je jedna z nejrychlejších při porovnávání již seřazeného pole.
+          \item Tohoto můžeme využít při zjišťování, zda je pole již seřazené.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Použité zdroje}
+        \begin{thebibliography}{99}
+          \bibitem[Algo]{Algo} Algoritmy.net - Bubble sort
+            \url{https://www.algoritmy.net/article/3/Bubble-sort}
+          \bibitem[Mendel]{Mendel} Mendel University in Brno - Řadící algoritmus
+              
+            \url{https://is.mendelu.cz/eknihovna/opory/zobraz_cast.pl?cast=65555}
+          \bibitem[Java]{Java} Java Algoritmy - Bubble sort
+            \url{http://javaalgoritmy.wz.cz/bubble.htm}
+          \bibitem[CS]{CS} CS Unplugged - Sorting Algorithms
+            \url{https://classic.csunplugged.org/sorting-algorithms/}
+        \end{thebibliography}
+    \end{frame}
+
+
+
+
+\end{document} 
